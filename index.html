@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <title>PQ Demo</title>
+
+    <link href="libs/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" />
+    <link href="libs/pqGrid/pqgrid.min.css" rel="stylesheet" />
+    <link href="libs/pqGrid/pqgrid.ui.min.css" rel="stylesheet" />
+    <link href="libs/pqGrid/themes/Office/pqgrid.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <!-- PQ Knock Out Implementation of -->
+    <h1 style="text-align: center;"> AccountCreationForm</h1>
+    <div style="background-color: rgb(224, 212, 212); height: 300px; width: auto; padding:auto;margin: 1px;">
+
+    <div id="myForm" data-bind="with: MyModel">
+        
+        <label>First Name:</label>
+        <input type="text" data-bind="value: FirstName" id="txtFirstName" /> &nbsp;&nbsp;
+        
+     
+       
+        <label>Last Name:</label>
+        <input type="text" data-bind="value: LastName" id="txtLastName" />&nbsp;&nbsp;
+        
+
+        <label>Date Of Birth:</label> 
+        <input type="date" data-bind="value:dob" id="txtdob" >&nbsp;&nbsp;
+       
+        
+        <label>Email:</label>
+        <input type="text" data-bind="value: Email" id="txtEmail" />
+        <br>
+        <br>
+       
+
+        <label>Address:</label>
+        <input type="text" data-bind="value: Address" id="txtAddress" />&nbsp;&nbsp;
+        
+
+    
+        <label>Gender:</label>
+        <select data-bind="
+        value: GenderId, 
+        options: $root.GenderList,
+        optionsValue: 'Value', 
+        optionsText: 'Text', 
+        optionsCaption: '---SELECT---'" id="ddlGender">
+        </select>
+        <br/>
+        <br/>
+
+        <label >Education:</label>
+        <input type="checkbox" data-bind="checked:qualification" id="txtQualification ">
+        <div data-bind="visible: qualification">
+          <div> <input type="radio" name="study" value="SLC" data-bind="checked:level">SLC</div>&nbsp;&nbsp;
+          <div> <input type="radio" name="study" value="Bachelors" data-bind="checked:level">Bachelors</div>&nbsp;&nbsp;
+          <div> <input type="radio" name="study" value="Masters" data-bind="checked:level">Masters</div>&nbsp;&nbsp;
+        </div>&nbsp;&nbsp;
+       
+
+        <label >Age:</label>
+        <input type="text" data-bind="value: Age" id="txtAge" />
+        <br/>
+        <br/>
+
+        
+
+        <button type="button" data-bind="event: {click: $root.SaveInformation}" id="btnAddInformation">Save</button>
+
+    </div>
+    </div>
+    <br />
+    <div style="width:500px;" id="demoGrid"></div>
+
+    <script src="libs/jquery/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="libs/jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="libs/pqGrid/pqgrid.min.js" type="text/javascript"></script>
+    <script src="js/knockout-3.3.0.js" type="text/javascript"></script>                              
+    <script src="libs/pqGrid/localize/pq-localize-en.js" type="text/javascript"></script>                              
+    <script type="text/javascript" src="libs/pqGrid/knockout/ko.pqgrid.min.js"></script>
+    <script src="indexVM.js" type="text/javascript"></script>
+</body>
+
+</html>
